@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout
+	title="Jérémy Mordo - A propos" description="A propos de Jérémy Mordo">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="A propos"
+				tagline=""
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/about.png"
+					alt=""
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Parcours</h2>
+				<div class="content">
+					<p>
+						Après l'obtention de mon baccalauréat dans la filière scientifique (STI Génie Optique)
+						j'ai décidé de m'orienter vers un métier lié au paramédical afin d'améliorer la condition de vie
+						de certaines personnes. Le métier d'Opticien Lunettier m'a permis, en 10 ans, de développer
+						mon sens relationnel, renforcer ma capacité à travailler en équipe et améliorer ma rigueur.
+						Malgrés tous ces points positifs, j'ai vu évoluer le métier durant cette décénnie, ce dernier
+						n'ayant plus d'intérêt pour moi, j'ai longement réfléchis à une reconversion.
+					</p>
+					<br>
+					<p>
+						Lors de la crise sanitaire de 2020, après le premier confinement, j'ai décidé de sauter le pas
+						pour engager cette transition. Le milieu de l'informatique m'ayant toujours beaucoup attiré,
+						j'ai décider de m'orienter vers le métier de développeur web. J'ai commencer par apprendre en
+						autodidacte les bases du métier (HTML, CSS, ect ...) et par la suite tenter de me former
+						plus professionnellement avec l'appuis de gens du milieu. Après quelques recherches, j'ai
+						découvert l'école "Wild Code School" qui a accepter de me prendre en formation. J'ai donc
+						suivis un cursus de 5 mois en formation intensive afin de perfectionner mes bases et aller plus
+						loin dans le développement, nottament apprendre le PHP et Symfony.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Expérience</h2>
+				<div class="content">
+					<p>
+						La connaissance n'ayant pas de limites, j'essai de me former dès que possible et développer
+						mes compétences dans divers domaines en lien avec mon métier. Je sais être autonome mais
+						apprécie également le travail en équipe, sous couvert d'une organisation bien
+						établie. Aujourd'hui, fort de mes 2 années d'expérience professionnelles dans le milieu
+						du développement web, je suis prêt à relever de nouveaux défis.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences</h2>
+				<div class="content">
+					<p>
+						<span style="text-decoration: underline;">Générales</span> : Autonome, déterminé,
+						à l'écoute, travail en équipe, flexible, organisé, empathique, avisé, patient.
+					</p>
+					<p>
+						<span style="text-decoration: underline;">Techniques</span> : PHP, Symfony, MySQL, Api Platform,
+						PhpMyAdmin, Docker, Google Api, Github, Gitlab, HTML, CSS, TWIG
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Passe-temps</h2>
+				<div class="content">
+					<p>Jeux-vidéos, natation, océanographie</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
