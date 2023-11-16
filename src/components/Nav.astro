@@ -6,10 +6,10 @@ import Base from "../layouts/BaseLayout.astro"
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Acceuil', href: '/' },
-	{ label: 'Projet', href: '/work' },
-	{ label: 'A propos', href: '/about' },
-	{ label: 'Contact', href: '/contact' },
+	{ label: 'Acceuil', href: '/PortFolio' },
+	{ label: 'Projet', href: '/PortFolio/work' },
+	{ label: 'A propos', href: '/PortFolio/about' },
+	{ label: 'Contact', href: '/PortFolio/contact' },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -22,7 +22,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 <nav>
 	<div class="menu-header">
-		<a href="/" class="site-title">
+		<a href="/PortFolio" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
 			 Jérémy Mordo
 		</a>
@@ -47,7 +47,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== '/PortFolio' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
 							href={href}
@@ -85,7 +85,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== '/PortFolio' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
 							href={href}
